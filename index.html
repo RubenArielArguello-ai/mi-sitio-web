@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Agent Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>AI Agent Lab</h1>
+        <p>
+            Entendé cómo funcionan los agentes,
+            workflows y automatizaciones.
+        </p>
+    </header>
+
+
+    <main>
+
+        <section class="concept-map">
+
+            <button class="concept" data-concept="agente">
+                🤖
+                <span>Agente</span>
+            </button>
+
+            <button class="concept" data-concept="prompt">
+                📝
+                <span>Prompt</span>
+            </button>
+
+            <button class="concept" data-concept="contexto">
+                🧠
+                <span>Contexto</span>
+            </button>
+
+            <button class="concept" data-concept="tools">
+                🛠️
+                <span>Tools</span>
+            </button>
+
+            <button class="concept" data-concept="workflow">
+                🔄
+                <span>Workflow</span>
+            </button>
+
+            <button class="concept" data-concept="n8n">
+                ⚙️
+                <span>n8n</span>
+            </button>
+
+            <button class="concept" data-concept="harness">
+                🪢
+                <span>Harness</span>
+            </button>
+
+            <button class="concept" data-concept="markdown">
+                📄
+                <span>Markdown</span>
+            </button>
+
+            <button class="concept" data-concept="tests">
+                ✅
+                <span>Tests</span>
+            </button>
+
+        </section>
+
+
+        <section id="explanation">
+
+            <h2>Elegí un concepto</h2>
+
+            <p>
+                Hacé clic en cualquiera de los elementos
+                para conocer qué función cumple.
+            </p>
+
+        </section>
+<section class="flow-section">
+
+    <h2>🔗 Simulador: Workflow + Agente + n8n</h2>
+
+    <p>
+        Ejemplo educativo de una posible arquitectura.
+        Tocá cada paso para entender qué función cumple.
+    </p>
+
+    <div class="workflow-simulator">
+
+        <button class="workflow-node" data-step="trigger">
+            🟢
+            <strong>Disparador</strong>
+            <small>Inicia el proceso</small>
+        </button>
+
+        <div class="workflow-arrow">↓</div>
+
+        <button class="workflow-node" data-step="agent">
+            🤖
+            <strong>Agente</strong>
+            <small>Razona y decide</small>
+        </button>
+
+        <div class="workflow-arrow">↓</div>
+
+        <button class="workflow-node" data-step="tool">
+            🛠️
+            <strong>Tool</strong>
+            <small>Permite hacer una acción</small>
+        </button>
+
+        <div class="workflow-arrow">↓</div>
+
+        <button class="workflow-node" data-step="n8n">
+            ⚙️
+            <strong>n8n</strong>
+            <small>Orquesta el proceso</small>
+        </button>
+
+        <div class="workflow-arrow">↓</div>
+
+        <button class="workflow-node" data-step="action">
+            📧
+            <strong>Acción</strong>
+            <small>Se ejecuta una tarea</small>
+        </button>
+
+        <div class="workflow-arrow">↓</div>
+
+        <button class="workflow-node" data-step="result">
+            ✅
+            <strong>Resultado</strong>
+            <small>Comprobamos qué ocurrió</small>
+        </button>
+
+    </div>
+
+    <button id="run-workflow" class="run-button">
+        ▶️ Ejecutar simulación
+    </button>
+
+    <div id="workflow-detail">
+        <h3>👆 Elegí un paso</h3>
+        <p>
+            Podés tocar cualquier elemento para conocer su función.
+        </p>
+    </div>
+
+</section>
+
+    <h2>🪢 Explorá el Harness</h2>
+
+    <p>
+        El Harness es el entorno que proporciona al agente
+        reglas, contexto, herramientas y mecanismos de control.
+    </p>
+
+    <div class="harness-container">
+
+        <div class="harness-label">
+            🪢 HARNESS
+        </div>
+
+        <button class="harness-item" data-harness="reglas">
+            📏
+            <span>Reglas</span>
+        </button>
+
+        <button class="harness-item" data-harness="contexto">
+            📚
+            <span>Contexto</span>
+        </button>
+
+        <button class="harness-item" data-harness="tools">
+            🛠️
+            <span>Tools</span>
+        </button>
+
+        <button class="harness-item" data-harness="memoria">
+            💾
+            <span>Memoria</span>
+        </button>
+
+        <button class="harness-item" data-harness="permisos">
+            🔐
+            <span>Permisos</span>
+        </button>
+
+        <button class="harness-item" data-harness="tests">
+            ✅
+            <span>Tests</span>
+        </button>
+
+        <div class="agent-inside-harness">
+
+            🤖
+            <strong>AGENTE</strong>
+
+            <small>
+                Trabaja dentro del Harness
+            </small>
+
+        </div>
+
+    </div>
+
+    <div id="harness-detail">
+
+        <p>
+            👆 Tocá un elemento del Harness.
+        </p>
+
+    </div>
+
+</section>
+<section class="markdown-section">
+
+    <h2>📝 Laboratorio de Markdown</h2>
+
+    <p>
+        Markdown permite escribir documentos estructurados
+        utilizando texto sencillo.
+    </p>
+
+    <div class="markdown-lab">
+
+        <div class="markdown-editor">
+
+            <h3>✍️ Escribí Markdown</h3>
+
+            <textarea id="markdown-input"># Reglas del agente
+
+## Objetivo
+
+Ayudar al usuario de forma clara.
+
+## Reglas
+
+- No inventar información.
+- Explicar los pasos.
+- Verificar los resultados.
+
+## Herramientas
+
+El agente puede utilizar n8n.</textarea>
+
+        </div>
+
+
+        <div class="markdown-preview">
+
+            <h3>👁️ Resultado</h3>
+
+            <div id="markdown-output"></div>
+
+        </div>
+
+    </div>
+
+</section>
+</section>   <!-- termina Markdown -->
+
+<!-- NUEVO AGENTE REAL -->
+<section class="real-agent-section">
+
+    <h2>🤖 Mi Agente Real</h2>
+
+    <p>
+        Este agente utiliza Gemma 4 ejecutándose localmente
+        mediante Ollama.
+    </p>
+
+    <div class="agent-config">
+
+        <div>
+            <strong>🧠 Modelo</strong>
+            <span>gemma4:latest</span>
+        </div>
+
+        <div>
+            <strong>⚙️ Motor</strong>
+            <span>Ollama local</span>
+        </div>
+
+        <div>
+            <strong>📡 Estado</strong>
+            <span id="ollama-status">Esperando...</span>
+        </div>
+
+    </div>
+
+    <label for="agent-prompt">
+        💬 ¿Qué querés pedirle al agente?
+    </label>
+
+    <textarea
+        id="agent-prompt"
+        placeholder="Ejemplo: Explicame qué diferencia hay entre un workflow y un agente."
+    ></textarea>
+
+    <button id="run-real-agent">
+        ▶️ Ejecutar agente
+    </button>
+
+    <div id="agent-response">
+        <h3>📨 Respuesta</h3>
+
+        <p>
+            La respuesta de Gemma aparecerá aquí.
+        </p>
+    </div>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
