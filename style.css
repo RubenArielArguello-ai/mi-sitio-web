@@ -1,0 +1,617 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0f14;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #aeb7c4;
+    font-size: 18px;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.concept-map {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.concept {
+    min-height: 150px;
+
+    border: 1px solid #2d3a48;
+    border-radius: 18px;
+
+    background: #111923;
+    color: white;
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.concept span {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.concept:hover {
+    transform: translateY(-5px);
+    border-color: #6ee7b7;
+}
+
+#explanation {
+    margin-top: 40px;
+    padding: 30px;
+
+    background: #111923;
+
+    border-radius: 18px;
+
+    border: 1px solid #2d3a48;
+}
+
+#explanation h2 {
+    margin-top: 0;
+}
+
+.agent-components {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.component {
+    min-height: 100px;
+
+    border: 1px solid #2d3a48;
+    border-radius: 15px;
+
+    background: #18232f;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 30px;
+
+    transition: 0.2s;
+}
+
+.component strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.component:hover {
+    transform: translateY(-3px);
+    border-color: #6ee7b7;
+}
+
+#component-detail {
+    margin-top: 25px;
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #0c141d;
+
+    border: 1px solid #2d3a48;
+}
+
+#component-detail h3 {
+    margin-top: 0;
+}
+
+.flow-section {
+    margin-top: 50px;
+    padding: 30px;
+
+    background: #0f1822;
+
+    border-radius: 20px;
+
+    border: 1px solid #2d3a48;
+}
+
+.flow-section h2 {
+    margin-top: 0;
+}
+
+.flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 30px;
+}
+
+.flow-node {
+    width: 220px;
+    min-height: 90px;
+
+    border-radius: 15px;
+
+    border: 1px solid #2d3a48;
+
+    background: #18232f;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 30px;
+
+    transition: 0.2s;
+}
+
+.flow-node span {
+    display: block;
+
+    font-size: 17px;
+
+    margin-top: 5px;
+}
+
+.flow-node:hover {
+    transform: scale(1.04);
+
+    border-color: #6ee7b7;
+}
+
+.arrow {
+    font-size: 30px;
+
+    margin: 8px 0;
+
+    color: #6ee7b7;
+}
+
+#flow-detail {
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    background: #0a1118;
+
+    border: 1px solid #2d3a48;
+}
+
+.harness-section {
+    margin-top: 50px;
+    padding: 30px;
+
+    background: #0f1822;
+
+    border-radius: 20px;
+
+    border: 1px solid #2d3a48;
+}
+
+.harness-section h2 {
+    margin-top: 0;
+}
+
+.harness-container {
+    position: relative;
+
+    margin-top: 30px;
+    padding: 70px 30px 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    border: 2px solid #6ee7b7;
+    border-radius: 25px;
+
+    background: #0a1118;
+}
+
+.harness-label {
+    position: absolute;
+
+    top: 15px;
+    left: 20px;
+
+    font-weight: bold;
+
+    color: #6ee7b7;
+}
+
+.harness-item {
+    min-height: 90px;
+
+    border-radius: 15px;
+
+    border: 1px solid #2d3a48;
+
+    background: #18232f;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 28px;
+
+    transition: 0.2s;
+}
+
+.harness-item span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 15px;
+}
+
+.harness-item:hover {
+    transform: translateY(-3px);
+
+    border-color: #6ee7b7;
+}
+
+.agent-inside-harness {
+    grid-column: 1 / -1;
+
+    min-height: 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border-radius: 20px;
+
+    background: #18232f;
+
+    border: 2px solid #6ee7b7;
+
+    font-size: 35px;
+}
+
+.agent-inside-harness strong {
+    font-size: 20px;
+}
+
+.agent-inside-harness small {
+    font-size: 13px;
+
+    color: #aeb7c4;
+}
+
+#harness-detail {
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    background: #0a1118;
+
+    border: 1px solid #2d3a48;
+}
+
+.markdown-section {
+    margin-top: 50px;
+    padding: 30px;
+
+    background: #0f1822;
+
+    border-radius: 20px;
+
+    border: 1px solid #2d3a48;
+}
+
+.markdown-lab {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+.markdown-editor,
+.markdown-preview {
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #0a1118;
+
+    border: 1px solid #2d3a48;
+}
+
+.markdown-editor h3,
+.markdown-preview h3 {
+    margin-top: 0;
+}
+
+#markdown-input {
+    width: 100%;
+
+    min-height: 300px;
+
+    resize: vertical;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    background: #111923;
+
+    color: white;
+
+    border: 1px solid #2d3a48;
+
+    border-radius: 10px;
+
+    font-family: monospace;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+#markdown-output {
+    min-height: 300px;
+
+    line-height: 1.6;
+}
+
+#markdown-output h1 {
+    font-size: 30px;
+}
+
+#markdown-output h2 {
+    font-size: 22px;
+}
+
+#markdown-output li {
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   SIMULADOR DE WORKFLOW
+   ========================================== */
+
+.workflow-simulator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.workflow-node {
+    width: 260px;
+    padding: 18px;
+    border: 1px solid #263241;
+    border-radius: 14px;
+    background: #111923;
+    color: white;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.workflow-node:hover {
+    transform: scale(1.04);
+    border-color: #6ee7b7;
+}
+
+.workflow-node strong {
+    font-size: 17px;
+}
+
+.workflow-node small {
+    color: #9ca8b5;
+}
+
+/* Paso que está ejecutándose */
+
+.workflow-node.active {
+    transform: scale(1.08);
+    border-color: #6ee7b7;
+    box-shadow: 0 0 25px rgba(110, 231, 183, 0.45);
+}
+
+/* Flechas */
+
+.workflow-arrow {
+    font-size: 24px;
+    color: #6ee7b7;
+}
+
+/* Botón ejecutar */
+
+.run-button {
+    display: block;
+    margin: 20px auto;
+    padding: 14px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #6ee7b7;
+    color: #07100c;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.run-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(110, 231, 183, 0.4);
+}
+
+/* Información del paso */
+
+#workflow-detail {
+    margin-top: 25px;
+    padding: 20px;
+
+    border: 1px solid #263241;
+    border-radius: 14px;
+
+    background: #111923;
+}
+
+#workflow-detail h3 {
+    margin-top: 0;
+}
+
+/* ===== Mi Agente Real — estética terminal ===== */
+
+.real-agent-section {
+    background: #0d0f0d;
+    border: 1px solid #1f2b1f;
+    border-radius: 6px;
+    padding: 2rem;
+    font-family: "SF Mono", "Fira Code", Consolas, monospace;
+}
+
+.real-agent-section h2 {
+    font-family: inherit;
+    color: #d7ffe0;
+}
+
+.agent-config {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin: 1.25rem 0;
+    background: #060706;
+    border: 1px solid #1f2b1f;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #8fae8f;
+}
+
+.agent-config strong {
+    display: block;
+    color: #d7ffe0;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+/* LED de estado */
+#ollama-status::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #555;
+    margin-right: 0.5rem;
+    box-shadow: 0 0 6px #555;
+}
+
+#ollama-status.online::before {
+    background: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+}
+
+#ollama-status.offline::before {
+    background: #f87171;
+    box-shadow: 0 0 8px #f87171;
+}
+
+#agent-prompt {
+    width: 100%;
+    min-height: 80px;
+    background: #060706;
+    border: 1px solid #1f2b1f;
+    border-radius: 4px;
+    color: #d7ffe0;
+    font-family: inherit;
+    padding: 0.75rem;
+    resize: vertical;
+}
+
+#agent-prompt:focus {
+    outline: none;
+    border-color: #4ade80;
+}
+
+#run-real-agent {
+    margin-top: 0.75rem;
+    background: #12331f;
+    color: #d7ffe0;
+    border: 1px solid #2c5a3a;
+    border-radius: 4px;
+    padding: 0.6rem 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+#run-real-agent:hover:not(:disabled) {
+    background: #1a4a2b;
+}
+
+#run-real-agent:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#agent-response {
+    margin-top: 1.25rem;
+    background: #060706;
+    border: 1px solid #1f2b1f;
+    border-left: 3px solid #4ade80;
+    border-radius: 4px;
+    padding: 1rem;
+    color: #c9d9c9;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+#agent-response h3 {
+    font-family: inherit;
+    color: #8fae8f;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
